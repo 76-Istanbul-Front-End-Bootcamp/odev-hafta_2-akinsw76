@@ -6,7 +6,7 @@
 var person = {
   name: "John",
   message: function () {    
-    console.log("Hello, " + this.name)
+    console.log("Hello, " + person.name)
   }
 }
 
@@ -25,7 +25,7 @@ messageFunc();
 var numbers = {
   numbers: [[10,20,30], 2],
   multiply: function(){
-    this.numbers[0].map(function(number, numberIndex){
+    this.numbers[0].map((number, numberIndex) => {
         const result = number * this.numbers[1];
         console.log(result)
     })
