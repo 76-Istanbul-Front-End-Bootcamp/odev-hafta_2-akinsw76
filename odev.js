@@ -43,8 +43,18 @@ numbers.multiply();
   Ornek : isValidName(" J ohn") false donmeli
 */
 function isValidName(name){
-
-}
+    if(typeof name ==='string') {
+        var trimmedName = name.trim().split(" ");
+        if(trimmedName.length > 1 || trimmedName[0] == ("")){
+            console.log("false");
+        }else {
+            console.log("true");
+        }
+    }else {
+        console.log("false");
+    }
+  };
+  isValidName("John");
 
 /*
   Odev 4:
@@ -59,7 +69,21 @@ function isValidName(name){
   Ornek: katilimSaati("5", "30") 150 sonucunu vermelidir.
 */
 function katilimSaati(dersSayisi, dersSuresi){
-
+    
+    if(typeof dersSayisi !=='number' && typeof dersSuresi !=='number' && typeof dersSayisi !== 'string' && typeof dersSuresi !== 'string') return false;
+    if(isNaN(dersSayisi) || isNaN(dersSuresi)) return false;
+    
+    if(typeof dersSuresi === 'string' || typeof dersSuresi === 'string') {
+        let sonuc = Number(dersSuresi) * Number(dersSayisi);
+        return sonuc;
+    }else {
+        let sonuc = dersSuresi * dersSayisi;
+        return sonuc;
+    }
 }
+console.log(katilimSaati(3, 30)); //90
+console.log(katilimSaati("3", 20)) //60
+console.log(katilimSaati("5","30")) //150
+
 
 
